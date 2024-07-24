@@ -9,12 +9,4 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
-
-  @Get('blog')
-  listBlog(): Object{
-    return {
-      author: "Manuel",
-      description: "Description Blog"
-    }
-  }
 }
