@@ -6,7 +6,7 @@ import { Blog } from './schemas/blog.schema'
 export class BlogController{
     constructor(private readonly blogService: BlogService){}
 
-    @Get()
+    @Get('list')
     async findAll(): Promise<Blog[]> {
         return this.blogService.findAll()
     }

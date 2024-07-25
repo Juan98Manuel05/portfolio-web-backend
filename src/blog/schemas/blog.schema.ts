@@ -4,25 +4,25 @@ import { Document } from "mongoose";
 @Schema()
 export class Blog extends Document{
 
-    @Prop()
+    @Prop({default: true})
     active: boolean
     
-    @Prop({ required: true})
+    @Prop({required: true})
     author: string
 
-    @Prop()
+    @Prop({required: true})
     title: string
 
-    @Prop()
+    @Prop({required: true})
     tag: string
 
-    @Prop()
+    @Prop({required: true})
     shortDescription: string
 
-    @Prop()
+    @Prop({required: true})
     content: string
 
-    @Prop()
+    @Prop({required: true})
     createdAt: string
 
 }

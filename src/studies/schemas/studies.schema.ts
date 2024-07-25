@@ -4,22 +4,22 @@ import { Document } from "mongoose";
 @Schema()
 export class Studies extends Document{
 
-    @Prop()
+    @Prop({default: true})
     active: boolean
 
-    @Prop()
+    @Prop({required: true})
     bachelor_degree: string
 
-    @Prop()
+    @Prop({required: true})
     college: string
 
-    @Prop()
+    @Prop({required: true})
     date: string
 
-    @Prop()
+    @Prop({required: true})
     icon: string
 
-    @Prop()
+    @Prop({required: true})
     class: string
 
 }
