@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document } from "mongoose";
 
-@Schema()
+@Schema({ versionKey: false })
 export class Knowledge extends Document{
     @Prop({ default: true })
     active: boolean
