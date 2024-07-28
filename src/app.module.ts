@@ -5,6 +5,7 @@ import { BlogModule } from './blog/blog.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { StudiesModule } from './studies/studies.module';
 import { KnowledgeModule } from './knowledge/knowledge.module';
+import { WorksModule } from './works/works.module';
 
 @Module({
   imports: [MongooseModule.forRoot(
@@ -12,6 +13,7 @@ import { KnowledgeModule } from './knowledge/knowledge.module';
     BlogModule,
     StudiesModule,
     KnowledgeModule,
+    WorksModule
   ],
   controllers: [AppController],
   providers: [AppService],
