@@ -8,10 +8,13 @@ import { Model } from "mongoose";
 export class KnowledgeService{
     constructor (@InjectModel(Knowledge.name) private knowledgeModel: Model<Knowledge>){}
 
-    async findAll(): Promise<Knowledge[]> {
-        return this.knowledgeModel.find().exec()
-    }
+    async find(params:{}): Promise<Knowledge[]> {
+        if(!params)
+            return this.knowledgeModel.find().exec()
 
+       return this.knowledgeModel.find({...params}).exec()
+    }
+    
     async Add( knowledge: Knowledge): Promise<Knowledge> {
         const newKnowledge = new this.knowledgeModel(knowledge)
         return newKnowledge.save()

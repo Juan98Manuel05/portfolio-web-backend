@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Res } from "@nestjs/common";
+import { Body, Controller, Get, Post, Query, Res } from "@nestjs/common";
 import { Response } from 'express';
 import { KnowledgeService } from "./knowledge.service";
 import { Knowledge } from "./schemas/knowledge.schema";
@@ -8,8 +8,11 @@ export class KnowledgeController{
     constructor (private readonly knowledgeService: KnowledgeService){}
 
     @Get('list')
-    async findAll(): Promise<Knowledge[]> {
-        return this.knowledgeService.findAll()
+    async find(@Query() queryParams: Knowledge): Promise<Knowledge[]> {
+        if(!queryParams)
+            return this.knowledgeService.find({})
+
+        return this.knowledgeService.find(queryParams)
     }
 
     @Post('add')
