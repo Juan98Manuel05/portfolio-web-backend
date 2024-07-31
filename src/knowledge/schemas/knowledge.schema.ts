@@ -23,6 +23,9 @@ export class Knowledge extends Document{
 
     @Prop({required: true})
     action: string
+
+    @Prop()
+    favorite: boolean
 }
 
 export const KnowledgeSchema = SchemaFactory.createForClass(Knowledge)
